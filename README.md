@@ -1,5 +1,9 @@
 # LuckyLick
 
+[![Türkçe Dokümantasyon](https://img.shields.io/badge/Dok%C3%BCmantasyon-T%C3%BCrk%C3%A7e%20%C4%B0%C3%A7in%20T%C4%B1klay%C4%B1n%C4%B1z-red?style=for-the-badge&logo=readme)](./README_TR.md)
+
+> [🇹🇷 **Türkçe dokümantasyonu okumak için tıklayınız → README_TR.md**](./README_TR.md)
+
 > **⚠️ This repository is public for documentation purposes only.**
 > The full source code is maintained in a private repository.
 > Contact: [SliferSoft](mailto:info@slifersoft.com)
@@ -8,7 +12,7 @@
 
 ## TL;DR
 
-LuckyLick is an **experimental research project** investigating ISP-level censorship bypass without relying on a VPN. Modeled after the interactive experience of theuselessweb.com, clicking the action button triggers a chance-driven selection that retrieves random content from curated data pools and upstream platform APIs. Adult video platforms were specifically chosen as the test subject because they face the strictest regulatory bans in Turkey and feature multi-layered CDN architectures, presenting the ultimate real-world benchmark for traffic tunneling. The project's core accomplishment is streaming this strictly blocked media directly in a standard browser without requiring any VPN, proxy extensions, or network configuration—achieved through local proxy routing and DNS-over-HTTPS (DoH) tunneling.
+LuckyLick is an **experimental research project** investigating ISP-level censorship bypass without relying on a VPN. Modeled after the interactive experience of theuselessweb.com, clicking the action button triggers a chance-driven selection that retrieves a random adult video from curated data pools and upstream platform APIs. Adult video platforms were specifically chosen as the test subject because they face the strictest regulatory bans in Turkey and feature multi-layered CDN architectures, presenting the ultimate real-world benchmark for traffic tunneling algorithms. The project's core accomplishment is streaming this strictly blocked media directly in a standard browser without requiring any VPN, proxy extensions, or network configuration—achieved through local proxy routing and DNS-over-HTTPS (DoH) tunneling.
 
 ---
 
