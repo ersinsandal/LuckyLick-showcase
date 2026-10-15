@@ -1,16 +1,14 @@
 # LuckyLick
 
-> **⚠️ This repository is public for documentation purposes only.**  
-> The full source code is maintained in a private repository.  
+> **⚠️ This repository is public for documentation purposes only.**
+> The full source code is maintained in a private repository.
 > Contact: [SliferSoft](mailto:info@slifersoft.com)
-
-🇹🇷 [Türkçe dokümantasyon için tıklayın → README_TR.md](./README_TR.md)
 
 ---
 
 ## TL;DR
 
-LuckyLick is a chance-based content discovery platform. Upon a single user interaction, a random adult video is selected from a curated pool and streamed directly within the browser. The platform's defining characteristic is its ability to deliver content from sites that are blocked at the ISP level in Turkey — without a VPN, without browser extensions, and without any additional client-side configuration. Censorship bypass occurs entirely on the server side, remaining transparent to the end user.
+LuckyLick is a **research experiment** into ISP-level censorship bypass. A locally-running Python proxy server resolves DNS through DNS-over-HTTPS (DoH), establishes direct HTTPS connections to blocked hosts, and streams content natively to the browser — with zero client-side configuration. Adult video platforms were selected as the test domain because they are among the most consistently blocked sites in Turkey and operate complex CDN infrastructure, making them a rigorous benchmark. A randomized content selection mechanic, inspired by [theuselessweb.com](https://theuselessweb.com/), was added as a UX layer on top of the core technical experiment.
 
 ---
 
@@ -21,15 +19,6 @@ LuckyLick is a chance-based content discovery platform. Upon a single user inter
 The project proves a single core thesis:
 
 > *It is possible to access ISP-blocked content from a standard browser — with zero VPN, zero browser extensions, and zero special configuration — purely through server-side DNS tunneling and HTTPS proxy routing.*
-
-### On the Name
-
-The name **LuckyLick** is a deliberate double entendre:
-
-- **Lucky** + **Click** → *LuckyLick* — the core UX mechanic is a single click that yields an unpredictable result, like a roll of the dice
-- **Lick** carries a secondary erotic connotation — a nod to the platform's adult content test subject, woven into the brand without being explicit
-
-The name was chosen to be memorable, slightly irreverent, and accurate to both the technical mechanic and the content domain.
 
 ---
 
@@ -152,16 +141,9 @@ while True:
 
 ## Content Choice Rationale
 
-For an effective censorship bypass test, the target content must satisfy two conditions:
+The research required a test target that is reliably blocked by Turkish ISPs and technically complex enough that a successful bypass is non-trivial. Adult video platforms satisfy both criteria: they are subject to blanket regulatory bans in Turkey and their delivery infrastructure — multi-CDN routing, signed token URLs, adaptive bitrate manifests — provides a rigorous benchmark for evaluating bypass completeness.
 
-1. **Reliably blocked by ISPs** in the test country (Turkey)
-2. **Rich in sub-resources** — scripts, CDN media, HLS playlists — so that the bypass is genuinely non-trivial
-
-Adult video platforms were chosen as the test target because they meet both conditions perfectly. They are among the most consistently and thoroughly blocked sites in Turkey, operating under blanket regulatory bans rather than case-by-case takedowns. Their technical infrastructure is also particularly demanding: video delivery involves multiple independently-hosted CDN subdomains, signed token URLs with short expiry windows, player authentication handshakes, and adaptive bitrate (HLS/DASH) manifests — making a successful end-to-end bypass technically meaningful and non-trivial to replicate.
-
-The adult content subject matter is therefore incidental to the research goal: it was selected because it is the hardest censorship target to bypass correctly, not because of the content itself.
-
-The randomized "roulette" UX element (inspired by [theuselessweb.com](https://theuselessweb.com/)) was added to give the experiment a playful, explorable character — one click, an unknown outcome. The luck/chance mechanic served as both a creative framing device and a lightweight pool-sampling mechanism for iterating over a large content dataset.
+The randomized selection mechanic (inspired by [theuselessweb.com](https://theuselessweb.com/)) was added as a UX layer to make iterating over a large content pool more engaging during testing. The subject matter is incidental to the research objective.
 
 ---
 
@@ -181,14 +163,12 @@ Open `http://localhost:5500` in any browser. No VPN, no extensions, no configura
 
 This project was a **research experiment**, not a production service. The findings were:
 
-| Status | Finding |
-|--------|---------|
-| ✅ | Full bypass achievable with pure Python + stdlib |
-| ✅ | Native HTML5 video playback (no iframe, no ads) |
-| ✅ | Zero client-side configuration required |
-| ✅ | Works across Chrome, Firefox, Edge, Safari |
-| ⚠️ | CDN token expiry means stream URLs are time-limited (~2h validity) |
-| ⚠️ | Some CDN nodes are geofenced at TCP level (unreachable even by IP) |
+- ✅ Full bypass achievable with pure Python + stdlib
+- ✅ Native HTML5 video playback (no iframe, no ads)
+- ✅ Zero client-side configuration required
+- ✅ Works across Chrome, Firefox, Edge, Safari
+- ⚠️ CDN token expiry means stream URLs are time-limited (~2h validity)
+- ⚠️ Some CDN nodes are geofenced at TCP level (unreachable even by IP)
 
 ---
 

@@ -1,16 +1,14 @@
 # LuckyLick — Türkçe Teknik Dokümantasyon
 
-> **⚠️ Bu depo yalnızca dokümantasyon amacıyla kamuya açıktır.**  
-> Kaynak kodların tamamı private bir depoda tutulmaktadır.  
+> **⚠️ Bu depo yalnızca dokümantasyon amacıyla kamuya açıktır.**
+> Kaynak kodların tamamı private bir depoda tutulmaktadır.
 > İletişim: [SliferSoft](mailto:info@slifersoft.com)
-
-🇬🇧 [Click here for English documentation → README.md](./README.md)
 
 ---
 
 ## Kısaca Ne Yapıyor?
 
-LuckyLick, şans tabanlı bir içerik keşif platformudur. Kullanıcının tek bir etkileşimiyle, derlenmiş bir havuzdan rastgele bir yetişkin video seçilir ve doğrudan tarayıcı üzerinden akıtılır. Platformun belirleyici özelliği, Türkiye'de ISP düzeyinde erişime kapatılmış sitelerden gelen içerikleri VPN, tarayıcı eklentisi veya herhangi bir istemci taraflı yapılandırma gerektirmeksizin sunabilmesidir. Sansür aşma işlemi tamamen sunucu tarafında gerçekleşir ve son kullanıcı açısından şeffaf biçimde işler.
+LuckyLick, ISP düzeyinde internet sansürünü VPN kullanmadan aşmayı araştıran **deneysel bir çalışmadır**. Yerel olarak çalışan bir Python proxy sunucusu DNS sorgularını DNS-over-HTTPS (DoH) üzerinden çözer, engelli sunuculara doğrudan HTTPS bağlantısı kurar ve içeriği tarayıcıya doğal biçimde akıtır; istemci tarafında hiçbir yapılandırma gerekmez. Yetişkin video platformları, Türkiye'de en kapsamlı biçimde engellenen siteler arasında yer alması ve karmaşık bir CDN altyapısına sahip olması nedeniyle test alanı olarak tercih edilmiştir. [theuselessweb.com](https://theuselessweb.com/)'dan ilham alınan rastgele içerik seçimi mekaniği ise teknik deneyin üzerine eklenen bir UX katmanıdır.
 
 ---
 
@@ -21,15 +19,6 @@ LuckyLick, şans tabanlı bir içerik keşif platformudur. Kullanıcının tek b
 Projenin temel tezi şudur:
 
 > *Standart bir tarayıcı üzerinden, herhangi bir VPN, tarayıcı eklentisi veya kullanıcı taraflı yapılandırma gerektirmeksizin, yalnızca sunucu tarafı DNS tünellemesi ve HTTPS proxy yönlendirmesi ile ISP tarafından engellenen içeriklere erişilebilir.*
-
-### İsmin Anlamı
-
-**LuckyLick** adı bilinçli olarak çok katmanlı seçilmiştir:
-
-- **Lucky** + **Click** → *LuckyLick* — Temel UX mekaniği tek tıklamayla öngörülemeyen bir sonuç elde etmektir; tıpkı zar atmak gibi. "Luck" şansı, "click" tıklamayı ifade eder; ikisi birleşince "LuckyLick" olur.
-- **Lick** kelimesi aynı zamanda erotik bir çağrışım taşır — projenin test alanı olan yetişkin içerik platformlarına markada örtük biçimde yapılan bir göndermedir.
-
-İsim; akılda kalıcı, hafifçe kışkırtıcı ve hem teknik mekanizmayı hem de içerik alanını doğru yansıtacak şekilde tasarlanmıştır.
 
 ---
 
@@ -159,16 +148,9 @@ while True:
 
 ## İçerik Türü Seçiminin Gerekçesi
 
-Etkili bir sansür bypass testi için hedef içeriğin iki koşulu sağlaması gerekir:
+Araştırma, Türkiye'deki ISP'ler tarafından güvenilir biçimde engellenen ve başarılı bir bypass'ın teknik açıdan zorlu olduğu bir test alanı gerektiriyordu. Yetişkin video platformları her iki kriteri de karşılamaktadır: Türkiye'de toptan düzenleyici yasaklara tabidir; çok CDN'li dağıtım yapısı, imzalı token URL'leri ve uyarlanabilir bit hızı manifestleri içeren altyapıları ise bypass bütünlüğünü değerlendirmek için zorlu bir ölçüt sunmaktadır.
 
-1. **Türkiye'deki ISP'ler tarafından güvenilir biçimde engellenmesi**
-2. **Alt kaynak yoğunluğu** — script'ler, CDN medyası, HLS oynatma listeleri — bypass'ın teknik açıdan gerçekten anlamlı olması için
-
-Yetişkin video platformları test hedefi olarak seçildi çünkü bu iki koşulu mükemmel biçimde karşılar. Türkiye'de vaka bazlı kararlarla değil, toptan düzenleyici yasaklarla sürekli ve kapsamlı biçimde engellenen siteler arasındadır. Üstelik teknik altyapıları da özellikle karmaşıktır: video dağıtımı bağımsız olarak barındırılan çok sayıda CDN alt alanı, kısa geçerlilik süresine sahip imzalı token URL'leri, oynatıcı kimlik doğrulama el sıkışmaları ve uyarlanabilir bit hızı (HLS/DASH) manifestleri içerir. Bu durum, başarılı bir uçtan uca bypass'ı teknik olarak son derece anlamlı ve kopyalanması güç kılmaktadır.
-
-Yetişkin içerik konusu bu nedenle araştırma hedefinin ikincil bir sonucudur: içeriğin kendisi için değil, doğru biçimde atlatılması en zor sansür hedefi olduğu için seçilmiştir.
-
-Rastgele "rulet" UX elementi ise ([theuselessweb.com](https://theuselessweb.com/) ilhamıyla) deneye oyunlaştırıcı, keşifsel bir karakter kazandırmak için eklendi. Şans/kader mekaniği hem yaratıcı bir çerçeveleme aracı hem de büyük bir içerik veri seti üzerinde örnekleme yapan hafif bir havuz yöneticisi olarak işlev gördü.
+Rastgele içerik seçimi mekaniği ([theuselessweb.com](https://theuselessweb.com/) ilhamıyla), test sürecinde büyük bir içerik havuzu üzerinde gezinmeyi daha ilgi çekici kılmak amacıyla UX katmanına eklenmiştir. Konu, araştırma hedefinin ikincil bir unsurudur.
 
 ---
 
