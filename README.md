@@ -10,7 +10,7 @@
 
 ## TL;DR
 
-LuckyLick is a **one-click adult video roulette** — hit the button, a dice animation plays, and a random video opens. The twist: it works entirely **without a VPN**, even for sites that are officially blocked in Turkey. The platform picks a random video from its pool and streams it directly in your browser, bypassing ISP-level censorship transparently — no extensions, no configuration, no third-party software required.
+LuckyLick is a chance-based content discovery platform. Upon a single user interaction, a random adult video is selected from a curated pool and streamed directly within the browser. The platform's defining characteristic is its ability to deliver content from sites that are blocked at the ISP level in Turkey — without a VPN, without browser extensions, and without any additional client-side configuration. Censorship bypass occurs entirely on the server side, remaining transparent to the end user.
 
 ---
 

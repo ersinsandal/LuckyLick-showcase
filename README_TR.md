@@ -10,7 +10,7 @@
 
 ## Kısaca Ne Yapıyor?
 
-LuckyLick, **tek tıklamayla rastgele yetişkin video açan bir platform**. Butona bas, zar animasyonu dönsün, rastgele bir video açılsın. Asıl sürpriz şu: Türkiye'de erişime kapalı, normalde VPN gerektiren sitelerden gelen videolar bile **VPN kullanmadan** sorunsuz oynatılıyor. Sistem arka planda ISP engelini şeffaf biçimde aşarken sen sadece videoyu izliyorsun — eklenti yok, ayar yok, üçüncü taraf yazılım yok.
+LuckyLick, şans tabanlı bir içerik keşif platformudur. Kullanıcının tek bir etkileşimiyle, derlenmiş bir havuzdan rastgele bir yetişkin video seçilir ve doğrudan tarayıcı üzerinden akıtılır. Platformun belirleyici özelliği, Türkiye'de ISP düzeyinde erişime kapatılmış sitelerden gelen içerikleri VPN, tarayıcı eklentisi veya herhangi bir istemci taraflı yapılandırma gerektirmeksizin sunabilmesidir. Sansür aşma işlemi tamamen sunucu tarafında gerçekleşir ve son kullanıcı açısından şeffaf biçimde işler.
 
 ---
 
