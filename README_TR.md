@@ -8,7 +8,7 @@
 
 ## Kısaca Ne Yapıyor?
 
-LuckyLick, ISP düzeyinde internet sansürünü VPN kullanmadan aşmayı araştıran **deneysel bir çalışmadır**. theuselessweb.com mantığından esinlenen platformda, kullanıcı butona tıkladığında şans faktörüne göre önceden derlenmiş veri havuzlarından ve API servislerinden rastgele bir yetişkin video içeriği seçilir. Sistemin temel başarısı; Türkiye'de erişimi engelli olan bu platformların video akışlarını kullanıcı tarafında hiçbir VPN, tarayıcı eklentisi veya DNS ayarına ihtiyaç bırakmaksızın, yerel proxy ve DoH tünellemesiyle doğrudan tarayıcı üzerinden sorunsuz oynatabilmesidir.
+LuckyLick, ISP düzeyinde internet sansürünü VPN kullanmadan aşmayı araştıran **deneysel bir çalışmadır**. theuselessweb.com mantığından esinlenen platformda, kullanıcı butona tıkladığında şans faktörüne göre önceden derlenmiş veri havuzlarından ve API servislerinden rastgele bir içerik seçilir. Test ortamı olarak yetişkin video platformlarının tercih edilme sebebi; Türkiye'de en katı idari engellere tabi olmaları ve çok katmanlı CDN altyapılarıyla tünelleme algoritmaları için en zorlu teknik ölçütü (benchmark) sunmalarıdır. Sistemin temel başarısı; normal koşullarda VPN gerektiren bu engelli platformların video akışlarını kullanıcı tarafında hiçbir VPN, tarayıcı eklentisi veya DNS ayarına ihtiyaç bırakmaksızın, yerel proxy ve DoH tünellemesiyle doğrudan tarayıcı üzerinden sorunsuz oynatabilmesidir.
 
 ---
 

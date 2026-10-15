@@ -8,7 +8,7 @@
 
 ## TL;DR
 
-LuckyLick is an **experimental research project** investigating ISP-level censorship bypass without relying on a VPN. Modeled after the interactive experience of theuselessweb.com, clicking the action button triggers a chance-driven selection that retrieves a random adult video from curated data pools and upstream platform APIs. The project's core accomplishment is streaming this strictly blocked media directly in a standard browser without requiring any VPN, proxy extensions, or network configuration—achieved through local proxy routing and DNS-over-HTTPS (DoH) tunneling.
+LuckyLick is an **experimental research project** investigating ISP-level censorship bypass without relying on a VPN. Modeled after the interactive experience of theuselessweb.com, clicking the action button triggers a chance-driven selection that retrieves random content from curated data pools and upstream platform APIs. Adult video platforms were specifically chosen as the test subject because they face the strictest regulatory bans in Turkey and feature multi-layered CDN architectures, presenting the ultimate real-world benchmark for traffic tunneling. The project's core accomplishment is streaming this strictly blocked media directly in a standard browser without requiring any VPN, proxy extensions, or network configuration—achieved through local proxy routing and DNS-over-HTTPS (DoH) tunneling.
 
 ---
 
