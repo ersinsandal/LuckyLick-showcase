@@ -8,7 +8,7 @@
 
 ## Kısaca Ne Yapıyor?
 
-LuckyLick, ISP düzeyinde internet sansürünü VPN kullanmadan aşmayı araştıran **deneysel bir çalışmadır**. Yerel olarak çalışan bir Python proxy sunucusu DNS sorgularını DNS-over-HTTPS (DoH) üzerinden çözer, engelli sunuculara doğrudan HTTPS bağlantısı kurar ve içeriği tarayıcıya doğal biçimde akıtır; istemci tarafında hiçbir yapılandırma gerekmez. Yetişkin video platformları, Türkiye'de en kapsamlı biçimde engellenen siteler arasında yer alması ve karmaşık bir CDN altyapısına sahip olması nedeniyle test alanı olarak tercih edilmiştir. [theuselessweb.com](https://theuselessweb.com/)'dan ilham alınan rastgele içerik seçimi mekaniği ise teknik deneyin üzerine eklenen bir UX katmanıdır.
+LuckyLick, ISP düzeyinde internet sansürünü VPN kullanmadan aşmayı araştıran **deneysel bir çalışmadır**. theuselessweb.com mantığından esinlenen platformda, kullanıcı butona tıkladığında şans faktörüne göre önceden derlenmiş veri havuzlarından ve API servislerinden rastgele bir yetişkin video içeriği seçilir. Sistemin temel başarısı; Türkiye'de erişimi engelli olan bu platformların video akışlarını kullanıcı tarafında hiçbir VPN, tarayıcı eklentisi veya DNS ayarına ihtiyaç bırakmaksızın, yerel proxy ve DoH tünellemesiyle doğrudan tarayıcı üzerinden sorunsuz oynatabilmesidir.
 
 ---
 
@@ -146,11 +146,11 @@ while True:
 
 ---
 
-## İçerik Türü Seçiminin Gerekçesi
+## İçerik Türü ve Şans Mekaniği
+ 
+Araştırma, Türkiye'deki ISP'ler tarafından güvenilir biçimde engellenen ve başarılı bir bypass'ın teknik açıdan zorlu olduğu bir test alanı gerektiriyordu. Yetişkin video platformları her iki kriteri de karşılamaktadır: Türkiye'de toptan düzenleyici yasaklara tabidir; çoklu CDN dağıtım yapıları, imzalı token URL'leri ve dinamik video akış manifestleri sunması nedeniyle tünelleme algoritmaları için zorlu bir kıstas sağlar.
 
-Araştırma, Türkiye'deki ISP'ler tarafından güvenilir biçimde engellenen ve başarılı bir bypass'ın teknik açıdan zorlu olduğu bir test alanı gerektiriyordu. Yetişkin video platformları her iki kriteri de karşılamaktadır: Türkiye'de toptan düzenleyici yasaklara tabidir; çok CDN'li dağıtım yapısı, imzalı token URL'leri ve uyarlanabilir bit hızı manifestleri içeren altyapıları ise bypass bütünlüğünü değerlendirmek için zorlu bir ölçüt sunmaktadır.
-
-Rastgele içerik seçimi mekaniği ([theuselessweb.com](https://theuselessweb.com/) ilhamıyla), test sürecinde büyük bir içerik havuzu üzerinde gezinmeyi daha ilgi çekici kılmak amacıyla UX katmanına eklenmiştir. Konu, araştırma hedefinin ikincil bir unsurudur.
+Kullanıcı arayüzünde uygulanan şans mekaniği ([theuselessweb.com](https://theuselessweb.com/) ilhamıyla) ise bu deneyimi etkileşimli hale getirir: Butona tıklandığında veri havuzları ve API servisleri taranarak şans faktörüne göre rastgele bir içerik seçilir ve hiçbir VPN bağlantısına gerek kalmadan anında tünellenip oynatılır. İçerik türü yalnızca sansür direnci yüksek bir ölçüt olduğu için tercih edilmiştir.
 
 ---
 

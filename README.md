@@ -8,7 +8,7 @@
 
 ## TL;DR
 
-LuckyLick is a **research experiment** into ISP-level censorship bypass. A locally-running Python proxy server resolves DNS through DNS-over-HTTPS (DoH), establishes direct HTTPS connections to blocked hosts, and streams content natively to the browser — with zero client-side configuration. Adult video platforms were selected as the test domain because they are among the most consistently blocked sites in Turkey and operate complex CDN infrastructure, making them a rigorous benchmark. A randomized content selection mechanic, inspired by [theuselessweb.com](https://theuselessweb.com/), was added as a UX layer on top of the core technical experiment.
+LuckyLick is an **experimental research project** investigating ISP-level censorship bypass without relying on a VPN. Modeled after the interactive experience of theuselessweb.com, clicking the action button triggers a chance-driven selection that retrieves a random adult video from curated data pools and upstream platform APIs. The project's core accomplishment is streaming this strictly blocked media directly in a standard browser without requiring any VPN, proxy extensions, or network configuration—achieved through local proxy routing and DNS-over-HTTPS (DoH) tunneling.
 
 ---
 
@@ -139,11 +139,11 @@ while True:
 
 ---
 
-## Content Choice Rationale
+## Content Choice and Chance Mechanic
 
-The research required a test target that is reliably blocked by Turkish ISPs and technically complex enough that a successful bypass is non-trivial. Adult video platforms satisfy both criteria: they are subject to blanket regulatory bans in Turkey and their delivery infrastructure — multi-CDN routing, signed token URLs, adaptive bitrate manifests — provides a rigorous benchmark for evaluating bypass completeness.
+The research required a test target that is reliably blocked by Turkish ISPs and technically demanding enough that an end-to-end bypass is non-trivial. Adult video platforms satisfy both criteria: they face blanket nationwide regulatory blocks in Turkey, and their multi-CDN architectures, signed expiry tokens, and adaptive streaming manifests present a rigorous benchmark for traffic tunneling.
 
-The randomized selection mechanic (inspired by [theuselessweb.com](https://theuselessweb.com/)) was added as a UX layer to make iterating over a large content pool more engaging during testing. The subject matter is incidental to the research objective.
+The chance mechanic (inspired by [theuselessweb.com](https://theuselessweb.com/)) drives the discovery workflow: clicking the button queries curated pools and upstream platform APIs to select a random video, streaming it instantly without any VPN. The content category serves strictly as a high-friction censorship benchmark.
 
 ---
 
